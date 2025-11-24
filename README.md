@@ -3,7 +3,7 @@
 
 A cobbled together custom worldgen datapack for carrot-craft.org that aims to improve playing experience for older clients (e.g. 1.8-1.12) on modern servers using ViaVersion. Clamps terrain to y=0-255 and makes it generally resemble pre-caves and cliffs while still incorporating modern structures and biomes. Great for use if you're running a modern server with a playerbase on legacy versions.
 
-Credits to https://modrinth.com/datapack/no-generation-y and https://modrinth.com/datapack/no-more-copper-ore for some of the base. 
+Credits to https://modrinth.com/datapack/no-generation-y and https://modrinth.com/datapack/no-more-copper-ore for some of the base. Currently supports 1.21.8.
 
 **REQUIRES RETRO CAVES TO WORK CORRECTLY! https://modrinth.com/datapack/retro-caves** 
 

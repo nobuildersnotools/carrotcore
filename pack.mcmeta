@@ -1,10 +1,7 @@
 {
   "pack": {
-    "pack_format": 81,
-    "supported_formats": {
-      "min_inclusive": 48,
-      "max_inclusive": 81
-    },
-    "description": "Carrotcore datapack (1.21.8)"
+    "description": "Carrotcore datapack",
+    "min_format": 88,
+    "max_format": 94.1
   }
 }

@@ -7,11 +7,13 @@
   "has_raids": true,
   "has_skylight": true,
   "has_ceiling": false,
+  "skybox": "overworld",
   "coordinate_scale": 1,
   "ambient_light": 0,
   "logical_height": 256,
   "effects": "minecraft:overworld",
   "infiniburn": "#minecraft:infiniburn_overworld",
+  "timelines": "#minecraft:in_overworld",
   "min_y": 0,
   "height": 256,
   "monster_spawn_light_level": {

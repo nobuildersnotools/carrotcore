@@ -1,16 +1,27 @@
 {
   "feature": "minecraft:ore_redstone",
   "placement": [
-    { "type": "minecraft:count", "count": 8 },
+    {
+      "type": "minecraft:count",
+      "count": 8
+    },
     {
       "type": "minecraft:height_range",
       "height": {
         "type": "minecraft:uniform",
-        "min_inclusive": { "absolute": 0 },
-        "max_inclusive": { "absolute": 16 }
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "absolute": 16
+        }
       }
     },
-    { "type": "minecraft:in_square" },
-    { "type": "minecraft:biome" }
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:biome"
+    }
   ]
 }

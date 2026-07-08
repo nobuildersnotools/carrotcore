@@ -9,6 +9,7 @@
   "has_ceiling": false,
   "skybox": "overworld",
   "coordinate_scale": 1.0,
+  "default_clock": "minecraft:overworld",
   "ambient_light": 0.0,
   "logical_height": 256,
   "cloud_height": 192,

@@ -8,6 +8,7 @@
   "has_skylight": true,
   "has_ceiling": true,
   "coordinate_scale": 1,
+  "default_clock": "minecraft:overworld",
   "ambient_light": 0,
   "logical_height": 256,
   "effects": "minecraft:overworld",

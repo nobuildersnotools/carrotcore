@@ -71,11 +71,11 @@
       "argument1": {
         "type": "minecraft:squeeze",
         "argument": {
-          "type": "minecraft:mul",
-          "argument1": 0.64,
-          "argument2": {
-            "type": "minecraft:interpolated",
-            "argument": {
+          "type": "minecraft:interpolated",
+          "argument": {
+            "type": "minecraft:mul",
+            "argument1": 0.64,
+            "argument2": {
               "type": "minecraft:blend_density",
               "argument": {
                 "type": "minecraft:add",
@@ -109,12 +109,18 @@
                           "argument1": 0.078125,
                           "argument2": {
                             "type": "minecraft:range_choice",
-                            "input": "minecraft:overworld/sloped_cheese",
+                            "input": {
+                              "type": "minecraft:cache_once",
+                              "argument": "minecraft:overworld/sloped_cheese"
+                            },
                             "min_inclusive": -1000000,
                             "max_exclusive": 1.5625,
                             "when_in_range": {
                               "type": "minecraft:min",
-                              "argument1": "minecraft:overworld/sloped_cheese",
+                              "argument1": {
+                                "type": "minecraft:cache_once",
+                                "argument": "minecraft:overworld/sloped_cheese"
+                              },
                               "argument2": {
                                 "type": "minecraft:mul",
                                 "argument1": 5,
@@ -167,7 +173,10 @@
                                           "argument2": {
                                             "type": "minecraft:mul",
                                             "argument1": -0.64,
-                                            "argument2": "minecraft:overworld/sloped_cheese"
+                                            "argument2": {
+                                              "type": "minecraft:cache_once",
+                                              "argument": "minecraft:overworld/sloped_cheese"
+                                            }
                                           }
                                         },
                                         "min": 0,
@@ -439,9 +448,7 @@
                     "type": "minecraft:condition",
                     "if_true": {
                       "type": "minecraft:biome",
-                      "biome_is": [
-                        "minecraft:wooded_badlands"
-                      ]
+                      "biome_is": "minecraft:wooded_badlands"
                     },
                     "then_run": {
                       "type": "minecraft:condition",
@@ -538,9 +545,7 @@
                     "type": "minecraft:condition",
                     "if_true": {
                       "type": "minecraft:biome",
-                      "biome_is": [
-                        "minecraft:swamp"
-                      ]
+                      "biome_is": "minecraft:swamp"
                     },
                     "then_run": {
                       "type": "minecraft:condition",
@@ -590,9 +595,7 @@
                     "type": "minecraft:condition",
                     "if_true": {
                       "type": "minecraft:biome",
-                      "biome_is": [
-                        "minecraft:mangrove_swamp"
-                      ]
+                      "biome_is": "minecraft:mangrove_swamp"
                     },
                     "then_run": {
                       "type": "minecraft:condition",
@@ -1005,9 +1008,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:frozen_peaks"
-                            ]
+                            "biome_is": "minecraft:frozen_peaks"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1076,9 +1077,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:snowy_slopes"
-                            ]
+                            "biome_is": "minecraft:snowy_slopes"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1141,9 +1140,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:jagged_peaks"
-                            ]
+                            "biome_is": "minecraft:jagged_peaks"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1182,9 +1179,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:grove"
-                            ]
+                            "biome_is": "minecraft:grove"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1238,9 +1233,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:stony_peaks"
-                                ]
+                                "biome_is": "minecraft:stony_peaks"
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -1273,9 +1266,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:stony_shore"
-                                ]
+                                "biome_is": "minecraft:stony_shore"
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -1329,9 +1320,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:windswept_hills"
-                                ]
+                                "biome_is": "minecraft:windswept_hills"
                               },
                               "then_run": {
                                 "type": "minecraft:condition",
@@ -1391,9 +1380,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:desert"
-                                ]
+                                "biome_is": "minecraft:desert"
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -1427,15 +1414,84 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:dripstone_caves"
-                                ]
+                                "biome_is": "minecraft:dripstone_caves"
                               },
                               "then_run": {
                                 "type": "minecraft:block",
                                 "result_state": {
                                   "Name": "minecraft:stone"
                                 }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:biome",
+                                "biome_is": "minecraft:sulfur_caves"
+                              },
+                              "then_run": {
+                                "type": "minecraft:sequence",
+                                "sequence": [
+                                  {
+                                    "type": "minecraft:sequence",
+                                    "sequence": [
+                                      {
+                                        "type": "minecraft:condition",
+                                        "if_true": {
+                                          "type": "minecraft:noise_threshold",
+                                          "noise": "minecraft:sulfur_cave_gradient",
+                                          "is_3d": true,
+                                          "min_threshold": -0.4000000059604645,
+                                          "max_threshold": -0.10000000149011612
+                                        },
+                                        "then_run": {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:cinnabar"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "minecraft:condition",
+                                        "if_true": {
+                                          "type": "minecraft:noise_threshold",
+                                          "noise": "minecraft:sulfur_cave_gradient",
+                                          "is_3d": true,
+                                          "min_threshold": 0.0,
+                                          "max_threshold": 0.4000000059604645
+                                        },
+                                        "then_run": {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:sulfur"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "minecraft:condition",
+                                        "if_true": {
+                                          "type": "minecraft:noise_threshold",
+                                          "noise": "minecraft:sulfur_cave_gradient",
+                                          "is_3d": true,
+                                          "min_threshold": 0.4000000059604645,
+                                          "max_threshold": 1.7976931348623157e+308
+                                        },
+                                        "then_run": {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:cinnabar"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "minecraft:block",
+                                    "result_state": {
+                                      "Name": "minecraft:stone"
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -1444,9 +1500,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:windswept_savanna"
-                            ]
+                            "biome_is": "minecraft:windswept_savanna"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1488,9 +1542,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:windswept_gravelly_hills"
-                            ]
+                            "biome_is": "minecraft:windswept_gravelly_hills"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1666,9 +1718,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:ice_spikes"
-                            ]
+                            "biome_is": "minecraft:ice_spikes"
                           },
                           "then_run": {
                             "type": "minecraft:condition",
@@ -1690,9 +1740,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:mangrove_swamp"
-                            ]
+                            "biome_is": "minecraft:mangrove_swamp"
                           },
                           "then_run": {
                             "type": "minecraft:block",
@@ -1705,9 +1753,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:mushroom_fields"
-                            ]
+                            "biome_is": "minecraft:mushroom_fields"
                           },
                           "then_run": {
                             "type": "minecraft:block",
@@ -1816,9 +1862,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:frozen_peaks"
-                            ]
+                            "biome_is": "minecraft:frozen_peaks"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1887,9 +1931,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:snowy_slopes"
-                            ]
+                            "biome_is": "minecraft:snowy_slopes"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -1952,9 +1994,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:jagged_peaks"
-                            ]
+                            "biome_is": "minecraft:jagged_peaks"
                           },
                           "then_run": {
                             "type": "minecraft:block",
@@ -1967,9 +2007,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:grove"
-                            ]
+                            "biome_is": "minecraft:grove"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -2014,9 +2052,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:stony_peaks"
-                                ]
+                                "biome_is": "minecraft:stony_peaks"
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -2049,9 +2085,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:stony_shore"
-                                ]
+                                "biome_is": "minecraft:stony_shore"
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -2105,9 +2139,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:windswept_hills"
-                                ]
+                                "biome_is": "minecraft:windswept_hills"
                               },
                               "then_run": {
                                 "type": "minecraft:condition",
@@ -2167,9 +2199,7 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:desert"
-                                ]
+                                "biome_is": "minecraft:desert"
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -2203,15 +2233,84 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": [
-                                  "minecraft:dripstone_caves"
-                                ]
+                                "biome_is": "minecraft:dripstone_caves"
                               },
                               "then_run": {
                                 "type": "minecraft:block",
                                 "result_state": {
                                   "Name": "minecraft:stone"
                                 }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:biome",
+                                "biome_is": "minecraft:sulfur_caves"
+                              },
+                              "then_run": {
+                                "type": "minecraft:sequence",
+                                "sequence": [
+                                  {
+                                    "type": "minecraft:sequence",
+                                    "sequence": [
+                                      {
+                                        "type": "minecraft:condition",
+                                        "if_true": {
+                                          "type": "minecraft:noise_threshold",
+                                          "noise": "minecraft:sulfur_cave_gradient",
+                                          "is_3d": true,
+                                          "min_threshold": -0.4000000059604645,
+                                          "max_threshold": -0.10000000149011612
+                                        },
+                                        "then_run": {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:cinnabar"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "minecraft:condition",
+                                        "if_true": {
+                                          "type": "minecraft:noise_threshold",
+                                          "noise": "minecraft:sulfur_cave_gradient",
+                                          "is_3d": true,
+                                          "min_threshold": 0.0,
+                                          "max_threshold": 0.4000000059604645
+                                        },
+                                        "then_run": {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:sulfur"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "minecraft:condition",
+                                        "if_true": {
+                                          "type": "minecraft:noise_threshold",
+                                          "noise": "minecraft:sulfur_cave_gradient",
+                                          "is_3d": true,
+                                          "min_threshold": 0.4000000059604645,
+                                          "max_threshold": 1.7976931348623157e+308
+                                        },
+                                        "then_run": {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:cinnabar"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "minecraft:block",
+                                    "result_state": {
+                                      "Name": "minecraft:stone"
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -2220,9 +2319,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:windswept_savanna"
-                            ]
+                            "biome_is": "minecraft:windswept_savanna"
                           },
                           "then_run": {
                             "type": "minecraft:condition",
@@ -2244,9 +2341,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:windswept_gravelly_hills"
-                            ]
+                            "biome_is": "minecraft:windswept_gravelly_hills"
                           },
                           "then_run": {
                             "type": "minecraft:sequence",
@@ -2351,9 +2446,7 @@
                           "type": "minecraft:condition",
                           "if_true": {
                             "type": "minecraft:biome",
-                            "biome_is": [
-                              "minecraft:mangrove_swamp"
-                            ]
+                            "biome_is": "minecraft:mangrove_swamp"
                           },
                           "then_run": {
                             "type": "minecraft:block",
@@ -2402,9 +2495,7 @@
                     "type": "minecraft:condition",
                     "if_true": {
                       "type": "minecraft:biome",
-                      "biome_is": [
-                        "minecraft:desert"
-                      ]
+                      "biome_is": "minecraft:desert"
                     },
                     "then_run": {
                       "type": "minecraft:condition",
@@ -2520,6 +2611,66 @@
                     ]
                   }
                 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:biome",
+          "biome_is": "minecraft:sulfur_caves"
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "minecraft:sulfur_cave_gradient",
+                "is_3d": true,
+                "min_threshold": -0.4000000059604645,
+                "max_threshold": -0.10000000149011612
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:cinnabar"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "minecraft:sulfur_cave_gradient",
+                "is_3d": true,
+                "min_threshold": 0.0,
+                "max_threshold": 0.4000000059604645
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:sulfur"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "minecraft:sulfur_cave_gradient",
+                "is_3d": true,
+                "min_threshold": 0.4000000059604645,
+                "max_threshold": 1.7976931348623157e+308
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:cinnabar"
+                }
               }
             }
           ]

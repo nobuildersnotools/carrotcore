@@ -53,6 +53,14 @@
     },
     "minecraft:gameplay/nether_portal_spawns_piglin": true,
     "minecraft:gameplay/respawn_anchor_works": false,
+    "minecraft:gameplay/straw_bed_rule": {
+      "can_set_spawn": "never",
+      "can_sleep": "when_dark",
+      "destroy_on_leave": true,
+      "error_message": {
+        "translate": "block.minecraft.bed.no_sleep"
+      }
+    },
     "minecraft:visual/cloud_color": "#ccffffff",
     "minecraft:visual/cloud_height": 192.33,
     "minecraft:visual/fog_color": "#c0d8ff",

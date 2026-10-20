@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:ore",
+  "discard_chance_on_air_exposure": 1.0,
+  "targets": [],
+  "size": 0
+}

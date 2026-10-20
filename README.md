@@ -5,6 +5,6 @@ A cobbled together custom worldgen datapack for carrot-craft.org that aims to im
 
 Credits to https://modrinth.com/datapack/no-generation-y and https://modrinth.com/datapack/no-more-copper-ore for some of the base. Currently supports 26.3.
 
-**REQUIRES RETRO CAVES TO WORK CORRECTLY! https://modrinth.com/datapack/retro-caves** 
+Pre-1.18 style caves are built in, ported to 26.3 from [Retro Caves](https://modrinth.com/datapack/retro-caves) by Klinbee (MIT, see `LICENSE-RetroCaves`). Don't install Retro Caves alongside this pack.
 
 Pull requests welcomed.

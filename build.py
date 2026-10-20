@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compile this repo into a Minecraft datapack ZIP.
 
-Packages pack.mcmeta and data/ at the root of the archive (the format
+Packages pack.mcmeta, data/ and bundled licenses at the root of the archive (the format
 Minecraft requires), skipping VCS files, docs, and the output zip itself.
 """
 import sys
@@ -9,7 +9,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-INCLUDE = ["pack.mcmeta", "data"]
+INCLUDE = ["pack.mcmeta", "data", "LICENSE-RetroCaves"]
 
 
 def iter_pack_files():
